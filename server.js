@@ -7,7 +7,8 @@ const express = require('express'),
     config = require('./server/config/database'), // get db config file
     User = require('./server/data/models/User'), // get the mongoose model
     port = process.env.PORT || 3000,
-    jwt = require('jwt-simple');
+    jwt = require('jwt-simple'),
+    path = require('path');
 
 // Allow CORS
 app.use(express.static(__dirname + "/dist"));
@@ -19,7 +20,9 @@ app.use(function(req, res, next) {
 });
 
 // get our request parameters
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(bodyParser.json());
 
 // log to console
@@ -27,11 +30,6 @@ app.use(morgan('dev'));
 
 // Use the passport package in our application
 app.use(passport.initialize());
-
-// demo Route (GET http://localhost:3000)
-app.get('/', function(req, res) {
-    res.send('Hello! The API is at http://localhost:' + port + '/api');
-});
 
 // connect to database
 mongoose.connect(config.database);
@@ -67,6 +65,17 @@ apiRoutes.post('/partners', PartnersController.createPartner);
 
 // connect the api routes under /api/*
 app.use('/api', apiRoutes);
+app
+    .get('/', function(req, res) {
+        res
+            .status(200)
+            .sendFile(path.join(__dirname, '/dist/index.html'));
+    })
+    .get('*', function(req, res) {
+        res
+            .status(200)
+            .sendFile(path.join(__dirname, '/dist/index.html'));
+    });
 
 // Start the server
 app.listen(port);
