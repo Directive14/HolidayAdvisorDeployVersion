@@ -1,0 +1,10 @@
+<div id="feed-container" class="card-feed-entry">
+    <div> <u>Title:</u> {{feed.title}}
+    </div>
+    <div><u> Content: </u><br/> {{feed.description | stripHtmlTags}}...
+    </div>
+    <div>
+        <a href="{{feed.link}}">Read more..</a>
+    </div>
+    <hr/>
+</div>

@@ -1,0 +1,88 @@
+<h1> Hello, {{currentUser.username}} </h1>
+
+<div class="row">
+    <div class="content-left col-xs-6">
+        <div class="image">
+            <img [src]="currentUser.image" alt="profile image" width="100%">
+        </div>
+        <br/>
+        <div class="content-left col-xs-12">
+            <a appNavigationHover [routerLink]="['/update']" class="btn btn-default col-xs-12">
+                <span>Update your info</span>
+            </a>
+        </div>
+    </div>
+    <div class="content-right col-xs-6">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="column-left col-xs-8 text-left">
+                        <p>Username: </p>
+                    </div>
+                    <div class="column-right col-xs-8 text-right">
+                        <p>{{currentUser.username}}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="column-left col-xs-8 text-left">
+                        <p>Email: </p>
+                    </div>
+                    <div class="column-right col-xs-8 text-right">
+                        <p>{{currentUser.email}}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="column-left col-xs-8 text-left">
+                        <p>First Name: </p>
+                    </div>
+                    <div class="column-right col-xs-8 text-right">
+                        <p>{{currentUser.firstName}}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="column-left col-xs-8 text-left">
+                        <p>Last Name: </p>
+                    </div>
+                    <div class="column-right col-xs-8 text-right">
+                        <p>{{currentUser.lastName}}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="column-left col-xs-8 text-left">
+                        <p>Gender: </p>
+                    </div>
+                    <div class="column-right col-xs-8 text-right">
+                        <p>{{currentUser.gender}}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="column-left col-xs-8 text-left">
+                        <p>Age: </p>
+                    </div>
+                    <div class="column-right col-xs-8 text-right">
+                        <p>{{currentUser.age}}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="column-left col-xs-8 text-left">
+                        <p>Member since:</p>
+                    </div>
+                    <div class="column-right col-xs-8 text-right">
+                        <p>{{currentUser.createdOn | date: 'dd/MM/yyyy'}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>

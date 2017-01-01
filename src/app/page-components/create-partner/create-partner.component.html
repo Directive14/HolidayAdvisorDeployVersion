@@ -1,0 +1,17 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2>Create new Partner</h2>
+    <form ngForm name="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Partner name</label>
+            <input type="text" class="form-control" name="name" #nameInput [(ngModel)]="partner.name" />
+            <label for="officeAddresses">Partner office</label>
+            <input type="text" class="form-control" name="officeAddresses" #officeAddressesInput [(ngModel)]="partner.officeAddresses" />
+            <label for="webAddress">Web Address</label>
+            <input type="text" class="form-control" name="webAddress" #webAddressInput [(ngModel)]="partner.webAddress" />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create!</button>
+            <a [routerLink]="['/partners']" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>

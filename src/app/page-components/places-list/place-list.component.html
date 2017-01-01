@@ -1,0 +1,53 @@
+<h3>All Places you should visit</h3>
+<div class="form-group" style="margin-left: 200px; width: 60%">
+    <label for="search">Search</label>
+    <input type="text" class="form-control" #searchinput name="search" (input)="searchinput.value">
+</div>
+<form class="form-inline" style="margin-left: 250px">
+    <div class="form-group">
+        <label for="sort" style="display: block">Sort</label>
+        <select type="dropdown" class="form-control" style="width: 250px" #sortinput name="sort" (input)="sortinput.value">
+                <option value="name">Name</option>
+                <option value="rating">Rating</option>
+            </select>
+    </div>
+    <div class="form-group">
+        <label for="order" style="display: block">Order</label>
+        <select type="dropdown" class="form-control" style="width: 250px" name="order" #orderinput (input)="orderinput.value">
+                 <option value="Ascending">Ascending</option>
+                 <option value="Descending">Descending</option>
+            </select>
+    </div>
+</form>
+<br/>
+<div class="table-responsive">
+    <table id="places-container" class="table">
+        <tbody>
+            <tr>
+                <td>
+                    <strong>Preview picture</strong>
+                </td>
+                <td>
+                    <strong>Destination</strong>
+                </td>
+                <td>
+                    <strong>Rating</strong>
+                </td>
+            </tr>
+            <tr *ngFor="let place of (places | filterPlaces:searchinput.value | sortPlacesBy :sortinput.value | orderPlacesBy :sortinput.value:orderinput.value)">
+                <td>
+                    <img [src]="place.img" width="200rem" [alt]="place.name">
+                </td>
+                <td>
+                    <a [routerLink]="['/places', place.name]">{{place.name}}</a>
+                </td>
+                <td>
+                    <app-star-rating [rating]='place.rating' [itemId]='place._id' (ratingClick)='ratingComponetClick($event)'></app-star-rating>
+                </td>
+                <td id="google-map">
+                    <app-googlemap  [lat]='place.lat' [lng]='place.lng'></app-googlemap>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

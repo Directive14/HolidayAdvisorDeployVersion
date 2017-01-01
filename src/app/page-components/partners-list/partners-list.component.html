@@ -1,0 +1,29 @@
+<h3 style="text-align:center">Our partners</h3>
+<div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>
+                    <strong>Partner name</strong>
+                </td>
+                <td>
+                    <strong>Office location</strong>
+                </td>
+                <td>
+                    <strong>Web Address</strong>
+                </td>
+            </tr>
+            <tr *ngFor="let partner of partners">
+                <td>
+                    <strong>{{partner.name}}</strong>
+                </td>
+                <td>
+                    {{partner.officeAddresses}}
+                </td>
+                <td>
+                    <a href="https://{{partner.webAddress}}">{{partner.webAddress}}</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

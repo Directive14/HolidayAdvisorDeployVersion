@@ -1,0 +1,12 @@
+<div class="jumbotron">
+    <h3 style="text-align: center">This Application was created by</h3>
+    <div *ngFor="let dev of developers">
+        <h4>{{dev.name}}</h4>
+        <div>
+            <a href="{{dev.git}}">GitHub Profile</a>
+        </div>
+        <div>
+            <a href="{{dev.academy}}">Telerik Academy Profile</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<h1>Profile Details</h1>
+
+<div class="row">
+    <div class="content-left col-xs-6">
+        <div class="image">
+            <img [src]="user.image" [alt]="user.username" width="100%">
+        </div>
+    </div>
+    <div class="content-right col-xs-6">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="column-left col-xs-8 text-left">
+                        <p>Username: </p>
+                    </div>
+                    <div class="column-right col-xs-8 text-right">
+                        <p>{{user.username}}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="column-left col-xs-8 text-left">
+                        <p>Email: </p>
+                    </div>
+                    <div class="column-right col-xs-8 text-right">
+                        <p>{{user.email}}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="column-left col-xs-8 text-left">
+                        <p>First Name: </p>
+                    </div>
+                    <div class="column-right col-xs-8 text-right">
+                        <p>{{firstName}}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="column-left col-xs-8 text-left">
+                        <p>Last Name: </p>
+                    </div>
+                    <div class="column-right col-xs-8 text-right">
+                        <p>{{user.lastName}}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="column-left col-xs-8 text-left">
+                        <p>Gender: </p>
+                    </div>
+                    <div class="column-right col-xs-8 text-right">
+                        <p>{{user.gender}}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="column-left col-xs-8 text-left">
+                        <p>Age: </p>
+                    </div>
+                    <div class="column-right col-xs-8 text-right">
+                        <p>{{user.age}}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="column-left col-xs-8 text-left">
+                        <p>Member since:</p>
+                    </div>
+                    <div class="column-right col-xs-8 text-right">
+                        <p>{{user.createdOn | date: 'dd/MM/yyyy'}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>

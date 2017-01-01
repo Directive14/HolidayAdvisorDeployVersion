@@ -1,0 +1,26 @@
+<!--<div class="jumbotron">
+    <p style="text-align:center">
+        <img [src]="img" width="200rem" [alt]="name">
+    </p>
+</div>-->
+<div class="jumbotron">
+    <h3 style="text-align:center">Destination</h3>
+    <p style="text-align:center">{{place.name}}</p>
+    <p style="text-align:center">
+        <img [src]="place.img" [alt]="place.name" width="300px" max-height="200px">
+    </p>
+    <p style="text-align:left">Additional information:</p>
+    <i style="text-align:left">{{place.info}}</i>
+    <form *ngIf="isOwner" ngForm name="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="info">Describe this place</label>
+            <input type="text" class="form-control" name="info" #infoInput [(ngModel)]="place.info" />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    </form>
+    <button *ngIf="isOwner" class="btn btn-danger" (click)='deleatePlace()'>Delete Place</button>
+    <p style="text-align:left">See location on the map:</p>
+    <app-googlemap [lat]='place.lat' [lng]='place.lng'>View on map</app-googlemap>
+</div>

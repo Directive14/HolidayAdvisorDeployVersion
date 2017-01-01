@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Directive 14</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap css -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="./assets/snowstorm/snowstorm-min.js"></script>
+    <script>
+        snowStorm.snowColor = '#ffffff'; // blue-ish snow!?
+        snowStorm.flakesMaxActive = 96; // show more snow on screen at once
+        snowStorm.useTwinkleEffect = true; // let the snow flicker in and out of view
+        snowStorm.followMouse = false;
+    </script>
+    <script>
+        snowStorm.excludeMobile = false;
+    </script>
+    <style>
+        #loading {
+            display: block;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <app-root><img id="loading" src="./assets/images/balls.gif" alt="Please wait..." width="100px" /></app-root>
+</body>
+
+</html>
