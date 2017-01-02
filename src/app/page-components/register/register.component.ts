@@ -1,10 +1,24 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, trigger, transition, animate, state, style } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AlertService, UserService } from '../../_services';
+import { AlertService, UserService} from '../../_services';
 
 @Component({
-    templateUrl: './register.component.html'
+    templateUrl: './register.component.html',
+    host: {
+     '[@routeAnimation]': 'true',
+     '[style.display]': "'block'",
+   },
+    animations: [
+    trigger('routeAnimation', [
+      state('*', style({transform: 'translateX(0)', opacity: 1})),
+      transition('void => *', [
+        style({transform: 'translateY(-100%)', opacity: 0}),
+        animate(2000)
+      ]),
+      transition('* => void', animate(2000, style({transform: 'translateY(100%)', opacity: 0})))
+    ])
+  ]
 })
 
 export class RegisterComponent {

@@ -4,7 +4,8 @@ import { User } from '../../_models';
 import { UserService } from '../../_services';
 
 @Component({
-    templateUrl: './other-person-profile.component.html'
+    templateUrl: './other-person-profile.component.html',
+    styleUrls: ['./other-person-profile.component.css']
 })
 export class OtherPersonProfileComponent {
     @Input() user: User;

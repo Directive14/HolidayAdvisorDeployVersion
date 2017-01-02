@@ -16,6 +16,7 @@ import { OtherPersonProfileComponent } from './page-components/other-person-prof
 import { UpdateProfileComponent } from './page-components/update-profile';
 import {FeedListComponent} from './page-components/feed-list';
 import { NotFoundComponent } from './page-components/not-found';
+import { NotLoggedInComponent } from './page-components/not-loggedin';
 import { AuthGuard } from './_guards';
 
 const appRoutes: Routes = [
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'notfound', component: NotFoundComponent },
+    { path: 'notloggedin', component: NotLoggedInComponent },
     { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
     { path: 'users', component: UsersListComponent, canActivate: [AuthGuard]  },
     { path: 'profile/:username', component: OtherPersonProfileComponent, canActivate: [AuthGuard] },
@@ -35,8 +37,8 @@ const appRoutes: Routes = [
     { path: 'createPartner', component: CreatePartnerComponent, canActivate: [AuthGuard]  },
     { path: 'feed', component: FeedListComponent },
     // otherwise redirect to home
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: '**', redirectTo: 'notfound' },
-    { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

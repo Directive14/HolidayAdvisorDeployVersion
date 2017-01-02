@@ -22,6 +22,7 @@ import { CreatePlaceComponent } from './page-components/create-place';
 import { CreatePartnerComponent } from './page-components/create-partner';
 import { ProfileComponent } from './page-components/profile';
 import { NotFoundComponent } from './page-components/not-found';
+import { NotLoggedInComponent } from './page-components/not-loggedin';
 import { StarRatingComponent } from './page-components/star-rating/star-rating.component';
 import { FilterPlaces, SortPlacesBy, OrderPlacesBy, StripHtmlTagsPipe, PlacesPagingPipe } from './_pipes';
 import { DropdownNotClosableZone, Dropdown, DropdownOpen } from './_directives/index';
@@ -71,6 +72,7 @@ import { FeedListComponent } from './page-components/feed-list/feed-list.compone
         UsersListComponent,
         FeedSingleComponent,
         NotFoundComponent,
+        NotLoggedInComponent,
         FeedListComponent,
         StripHtmlTagsPipe,
         PlacesPagingPipe

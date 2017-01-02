@@ -1,29 +1,21 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, trigger, state, transition, style, animate } from '@angular/core';
 
 import { User, Place } from '../../_models';
-import { UserService, PlacesService } from '../../_services';
+import { PlacesService } from '../../_services';
 
 @Component({
     templateUrl: './home.component.html'
 })
 
 export class HomeComponent implements OnInit {
-    currentUser: User;
-    users: User[] = [];
     places: Place[] = [];
     myInterval: number = 3000;
 
-    constructor(private userService: UserService, private placeService: PlacesService) {
-        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    constructor( private placeService: PlacesService) {
     }
 
     ngOnInit() {
-        this.loadAllUsers();
         this.loadPlaces();
-    }
-
-    private loadAllUsers() {
-        this.userService.getAll().subscribe(users => { this.users = users; });
     }
 
     private loadPlaces() {

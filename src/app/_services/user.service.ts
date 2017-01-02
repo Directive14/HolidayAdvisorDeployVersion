@@ -16,11 +16,7 @@ export class UserService {
         return this.http.get('https://holiday-advisor.herokuapp.com/api/users/'+ String(username))
             .map((res: Response) => res.json())
     }
-
-    // getById(id: number) {
-    //     return this.http.get('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
-    // }
-
+    
     create(user: User) {
         return this.http.post('https://holiday-advisor.herokuapp.com/api/signup', user, this.jwt()).map((response: Response) => response.json());
     }
@@ -29,11 +25,9 @@ export class UserService {
          return this.http.put('https://holiday-advisor.herokuapp.com/api/users/' + user.username, user).map((response: Response) => response.json());
     }
 
-    // delete(id: number) {
-    //     return this.http.delete('http://localhost:3000/api/users/' + id, this.jwt()).map((response: Response) => response.json());
-    // }
-
-    // private helper methods
+    getCurrentUser(){
+        return JSON.parse(localStorage.getItem('currentUser')).user;
+    }
 
     private jwt() {
         // create authorization header with jwt token

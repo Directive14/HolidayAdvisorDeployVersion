@@ -1,5 +1,8 @@
-<h3>Live Travel Journals, Diaries and Photos from real Travellers: </h3>
-
-<div class="single-feed">
-    <app-feed-single *ngFor="let feed of feeds" [feed]="feed"></app-feed-single>
+<img class="displayed" src="http://headedabroad.com/wp-content/uploads/2014/07/headed_abroad03.png" height="150" width="350">
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <app-feed-single *ngFor="let feed of feeds" [feed]="feed"></app-feed-single>
+        </div>
+    </div>
 </div>

@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Place } from '../../_models';
-import { PlacesService, AlertService } from '../../_services';
+import { PlacesService, AlertService, UserService } from '../../_services';
 
 @Component({
-    templateUrl: './place-single.component.html'
+    templateUrl: './place-single.component.html',
+    styleUrls:['./place-single.component.css']
 })
 export class PlaceSingleComponent {
     @Input() place: Place;
@@ -15,7 +16,8 @@ export class PlaceSingleComponent {
         private route: ActivatedRoute,
         private placesService: PlacesService,
         private router: Router,
-        private alertService: AlertService) {
+        private alertService: AlertService,
+        private userService: UserService) {
         this.place = {
             owner: '',
             info: '',
@@ -64,7 +66,7 @@ export class PlaceSingleComponent {
     }
 
     get isOwner(): boolean {
-        if (JSON.parse(localStorage.getItem('currentUser')).user.username === this.place.owner) {
+        if (this.userService.getCurrentUser().username === this.place.owner) {
             return true;
         } else {
             return false;

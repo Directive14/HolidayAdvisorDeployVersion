@@ -1,10 +1,22 @@
-<div id="feed-container" class="card-feed-entry">
-    <div> <u>Title:</u> {{feed.title}}
+<h2> {{feed.title}} </h2>
+<p class="lead">
+    By: {{feed.author}}
+</p>
+<p class="pubDate"><span class="glyphicon glyphicon-time"></span> {{feed.pubDate | date:'dd-MM-yyyy'}}</p>
+<hr class="style2">
+<img class="img-responsive" src="http://hnzyzb.com/data/out/15/44390370-travel-wallpapers.jpg" alt="">
+<hr class="style2">
+<p align="justify">{{feed.content | stripHtmlTags}}</p>
+<a class="btn btn-primary" href="{{feed.link}}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+<hr class="style2">
+<div class="well">
+    <h4>Categories:</h4>
+    <div class="row">
+        <div class="col-lg-6">
+            <ul class="list-unstyled">
+                <li>{{feed.categories}}</li>
+            </ul>
+        </div>
     </div>
-    <div><u> Content: </u><br/> {{feed.description | stripHtmlTags}}...
-    </div>
-    <div>
-        <a href="{{feed.link}}">Read more..</a>
-    </div>
-    <hr/>
 </div>
+<hr class="style1">

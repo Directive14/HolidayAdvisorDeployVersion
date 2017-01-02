@@ -20,9 +20,7 @@ app.use(function(req, res, next) {
 });
 
 // get our request parameters
-app.use(bodyParser.urlencoded({
-    extended: false
-}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // log to console

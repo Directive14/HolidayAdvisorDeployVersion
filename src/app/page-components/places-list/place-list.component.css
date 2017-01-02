@@ -1,6 +1,11 @@
-td#google-map{
-     width: 350px;
+td#google-map {
+    width: 350px;
 }
-div.responsive{
+
+div.responsive {
     width: 100vw;
+}
+
+div.table-responsive {
+    overflow: hidden;
 }

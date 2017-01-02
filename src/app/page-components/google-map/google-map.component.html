@@ -1,9 +1,8 @@
+<button [hidden]="showMap" (click)="togglestates()" (click)="showMap = true; myMap.triggerResize()">Show on map <span class="glyphicon glyphicon-chevron-down"></span></button>
+<button [hidden]="!showMap" (click)="togglestates()" (click)="showMap = false; myMap.triggerResize()">Hide <span class="glyphicon glyphicon-chevron-up"></span></button>
 
-<button [hidden]="showMap" (click)="togglestates()" (click)="showMap = true; myMap.triggerResize()">Show on map</button>
-<button [hidden]="!showMap" (click)="togglestates()" (click)="showMap = false; myMap.triggerResize()">Hide</button>
-
-<div  [hidden]="!showMap" class="rajabox" [@showmsg]="state">
-  <sebm-google-map  #myMap [latitude]="lat" [longitude]="lng">
-    <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+<div [style.visibility]="!showMap ? 'hidden' : 'visible'" class="rajabox" [@showmsg]="state">
+    <sebm-google-map #myMap [latitude]="lat" [longitude]="lng">
+        <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
     </sebm-google-map>
-  </div>
+</div>

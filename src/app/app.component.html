@@ -21,14 +21,19 @@
                 <li [@movePanel]='state' appNavigationHover class="active2"><a [routerLink]="['/register']">Register</a></li>
             </ul>
             <ul class="nav nav-pills navbar-right" *ngIf="isLoggedIn">
+                <li [@movePanel]='state' class="active2">
+                    <img class="img-circle img-responsive header-profile-picture" width="40rem" [src]='currentUser.image'>
+                </li>
                 <!-- dropdown with items that are not closing dropdown when you click on them -->
-                <div class="dropdown col-md-4" dropdown>
-                    <button class="btn btn-primary" dropdown-open>Wellcome back<span class="caret"></span></button>
-                    <ul class="dropdown-menu" dropdown-not-closable-zone>
-                        <li [@movePanel]='state' appNavigationHover class="active2"><a [routerLink]="['/profile']">Profile</a></li>
-                        <li [@movePanel]='state' appNavigationHover class="active2"><a [routerLink]="['/users']">Users</a></li>
-                    </ul>
-                </div>
+                <li [@movePanel]='state' class="active2">
+                    <div class="dropdown col-md-4" dropdown>
+                        <button class="btn btn-primary" dropdown-open>{{currentUser.username}}<span class="caret"></span></button>
+                        <ul class="dropdown-menu" dropdown-not-closable-zone>
+                            <li [@movePanel]='state' appNavigationHover class="active2"><a [routerLink]="['/profile']">Profile</a></li>
+                            <li [@movePanel]='state' appNavigationHover class="active2"><a [routerLink]="['/users']">Users</a></li>
+                        </ul>
+                    </div>
+                </li>
                 <li [@movePanel]='state' appNavigationHover class="active2 col-md-offset-4"><a [routerLink]="['/logout']" (click)="logout()">Logout</a></li>
             </ul>
         </div>

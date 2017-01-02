@@ -1,88 +1,64 @@
-<h1> Hello, {{currentUser.username}} </h1>
+<img class="displayed" src="http://orig14.deviantart.net/8996/f/2016/192/2/4/welcome_by_colbyr-da9kb1q.png" height="150" width="350">
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1 toppad">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Welcome back, {{currentUser.username}}</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 " align="center">
+                            <img [src]="currentUser.image" alt="profile image" width="100%" class="img-circle img-responsive">
+                            <hr>
+                            <p class="about"><i class="glyphicon glyphicon-pencil"></i>About:</p>
+                            <p class="style">{{currentUser.about}}</p>
+                        </div>
+                        <div class=" col-md-9 col-lg-9 ">
+                            <table class="table table-user-information">
+                                <tbody>
+                                    <tr>
+                                        <td><i class="glyphicon glyphicon-user"></i> Username:</td>
+                                        <td>{{currentUser.username}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="glyphicon glyphicon-info-sign"></i> First Name</td>
+                                        <td>{{currentUser.firstName}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="glyphicon glyphicon-info-sign"></i> Last Name</td>
+                                        <td>{{currentUser.lastName}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="glyphicon glyphicon-gift"> </i> Age</td>
+                                        <td>{{currentUser.age}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="glyphicon glyphicon-envelope"> </i> Email</td>
+                                        <td>{{currentUser.email}}</td>
+                                    </tr>
 
-<div class="row">
-    <div class="content-left col-xs-6">
-        <div class="image">
-            <img [src]="currentUser.image" alt="profile image" width="100%">
-        </div>
-        <br/>
-        <div class="content-left col-xs-12">
-            <a appNavigationHover [routerLink]="['/update']" class="btn btn-default col-xs-12">
-                <span>Update your info</span>
-            </a>
+                                    <tr>
+                                        <td><i class="glyphicon glyphicon-info-sign"></i> Gender</td>
+                                        <td>{{currentUser.gender}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="glyphicon glyphicon-time"> </i> Member Since</td>
+                                        <td>{{currentUser.createdOn | date: 'dd/MM/yyyy'}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <a appNavigationHover [routerLink]="['/update']" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                    <span class="pull-right">
+                           <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a> 
+                        </span>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="content-right col-xs-6">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="column-left col-xs-8 text-left">
-                        <p>Username: </p>
-                    </div>
-                    <div class="column-right col-xs-8 text-right">
-                        <p>{{currentUser.username}}</p>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="column-left col-xs-8 text-left">
-                        <p>Email: </p>
-                    </div>
-                    <div class="column-right col-xs-8 text-right">
-                        <p>{{currentUser.email}}</p>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="column-left col-xs-8 text-left">
-                        <p>First Name: </p>
-                    </div>
-                    <div class="column-right col-xs-8 text-right">
-                        <p>{{currentUser.firstName}}</p>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="column-left col-xs-8 text-left">
-                        <p>Last Name: </p>
-                    </div>
-                    <div class="column-right col-xs-8 text-right">
-                        <p>{{currentUser.lastName}}</p>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="column-left col-xs-8 text-left">
-                        <p>Gender: </p>
-                    </div>
-                    <div class="column-right col-xs-8 text-right">
-                        <p>{{currentUser.gender}}</p>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="column-left col-xs-8 text-left">
-                        <p>Age: </p>
-                    </div>
-                    <div class="column-right col-xs-8 text-right">
-                        <p>{{currentUser.age}}</p>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="column-left col-xs-8 text-left">
-                        <p>Member since:</p>
-                    </div>
-                    <div class="column-right col-xs-8 text-right">
-                        <p>{{currentUser.createdOn | date: 'dd/MM/yyyy'}}</p>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
+</div>

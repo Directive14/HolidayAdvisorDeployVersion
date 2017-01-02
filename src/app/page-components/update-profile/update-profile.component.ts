@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, trigger, state, style, animate, transition} from '@angular/core';
 import { User } from '../../_models';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -7,7 +7,21 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-profile',
-  templateUrl: './update-profile.component.html'
+  templateUrl: './update-profile.component.html',
+    host: {
+     '[@routeAnimation]': 'true',
+     '[style.display]': "'block'",
+   },
+    animations: [
+    trigger('routeAnimation', [
+      state('*', style({transform: 'translateX(0)', opacity: 1})),
+      transition('void => *', [
+        style({transform: 'translateY(-100%)', opacity: 0}),
+        animate(300)
+      ]),
+      transition('* => void', animate(300, style({transform: 'translateY(100%)', opacity: 0})))
+    ])
+  ]
 })
 export class UpdateProfileComponent{
   @Input() user: User = new User;
@@ -17,7 +31,7 @@ export class UpdateProfileComponent{
         private userService: UserService) {}
         
         ngOnInit() {
-        let storageUser = JSON.parse(localStorage.getItem('currentUser')).user;
+        let storageUser = this.userService.getCurrentUser();
         this.user.username = storageUser.username;
         this.user.about = storageUser.about;
         this.user.image = storageUser.image;

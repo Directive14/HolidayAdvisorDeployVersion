@@ -1,82 +1,61 @@
-<h1>Profile Details</h1>
+<div class="page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1 toppad">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{user.username}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-3 " align="center">
+                                <img [src]="user.image" [alt]="user.image" width="100%" class="img-circle img-responsive">
+                                <hr>
+                                <p class="about"><i class="glyphicon glyphicon-pencil"></i>About:</p>
+                                <p class="style">{{user.about}}</p>
+                            </div>
+                            <div class=" col-md-9 col-lg-9 ">
+                                <table class="table table-user-information">
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="glyphicon glyphicon-user"></i> Username:</td>
+                                            <td>{{user.username}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="glyphicon glyphicon-info-sign"></i> First Name</td>
+                                            <td>{{user.firstName}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="glyphicon glyphicon-info-sign"></i> Last Name</td>
+                                            <td>{{user.lastName}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="glyphicon glyphicon-gift"> </i> Age</td>
+                                            <td>{{user.age}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="glyphicon glyphicon-envelope"> </i> Email</td>
+                                            <td>{{user.email}}</td>
+                                        </tr>
 
-<div class="row">
-    <div class="content-left col-xs-6">
-        <div class="image">
-            <img [src]="user.image" [alt]="user.username" width="100%">
+                                        <tr>
+                                            <td><i class="glyphicon glyphicon-info-sign"></i> Gender</td>
+                                            <td>{{user.gender}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="glyphicon glyphicon-time"> </i> Member Since</td>
+                                            <td>{{user.createdOn | date: 'dd/MM/yyyy'}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <a appNavigationHover [routerLink]="['/users']" data-original-title="Go back to all users" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-menu-left"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="content-right col-xs-6">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="column-left col-xs-8 text-left">
-                        <p>Username: </p>
-                    </div>
-                    <div class="column-right col-xs-8 text-right">
-                        <p>{{user.username}}</p>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="column-left col-xs-8 text-left">
-                        <p>Email: </p>
-                    </div>
-                    <div class="column-right col-xs-8 text-right">
-                        <p>{{user.email}}</p>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="column-left col-xs-8 text-left">
-                        <p>First Name: </p>
-                    </div>
-                    <div class="column-right col-xs-8 text-right">
-                        <p>{{firstName}}</p>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="column-left col-xs-8 text-left">
-                        <p>Last Name: </p>
-                    </div>
-                    <div class="column-right col-xs-8 text-right">
-                        <p>{{user.lastName}}</p>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="column-left col-xs-8 text-left">
-                        <p>Gender: </p>
-                    </div>
-                    <div class="column-right col-xs-8 text-right">
-                        <p>{{user.gender}}</p>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="column-left col-xs-8 text-left">
-                        <p>Age: </p>
-                    </div>
-                    <div class="column-right col-xs-8 text-right">
-                        <p>{{user.age}}</p>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="column-left col-xs-8 text-left">
-                        <p>Member since:</p>
-                    </div>
-                    <div class="column-right col-xs-8 text-right">
-                        <p>{{user.createdOn | date: 'dd/MM/yyyy'}}</p>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
+</div>
