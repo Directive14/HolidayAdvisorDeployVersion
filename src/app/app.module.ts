@@ -26,7 +26,7 @@ import { NotLoggedInComponent } from './page-components/not-loggedin';
 import { StarRatingComponent } from './page-components/star-rating/star-rating.component';
 import { FilterPlaces, SortPlacesBy, OrderPlacesBy, StripHtmlTagsPipe, PlacesPagingPipe } from './_pipes';
 import { DropdownNotClosableZone, Dropdown, DropdownOpen } from './_directives/index';
-import { AgmCoreModule } from '../../node_modules/angular2-google-maps/core';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 import { GoogleMapComponent } from './page-components/google-map';
 import { UpdateProfileComponent } from './page-components/update-profile/update-profile.component';
 import { OtherPersonProfileComponent } from './page-components/other-person-profile/other-person-profile.component';
