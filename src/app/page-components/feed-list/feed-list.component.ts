@@ -1,5 +1,5 @@
 import { Component, OnInit, trigger, transition, state, style, animate } from '@angular/core';
-import {FeedService} from '../../_services'
+import { FeedService } from '../../_services'
 // Add the RxJS Observable operators we need in this app.
 import './rxjs-operators';
 
@@ -10,8 +10,8 @@ import './rxjs-operators';
 })
 export class FeedListComponent implements OnInit {
 
- private feedUrl: string = 'https%3A%2F%2Fwww.theguardian.com%2Fuk%2Ftravel%2Frss&api_key=gk0gh49rwtwabgdj5gehtoacztkvyis1igf15ahi&order_dir=desc&count=20';
-  private feeds: any;
+  private feedUrl: string = 'https%3A%2F%2Fwww.theguardian.com%2Fuk%2Ftravel%2Frss&api_key=gk0gh49rwtwabgdj5gehtoacztkvyis1igf15ahi&order_dir=desc&count=20';
+  feeds: any;
   constructor(private feedService: FeedService) { }
 
   ngOnInit() {
@@ -20,9 +20,9 @@ export class FeedListComponent implements OnInit {
 
   private refreshFeed() {
     this.feedService.getFeedContent(this.feedUrl)
-        .subscribe(
-            feed => this.feeds = feed.items,
-            error => console.log(error));
+      .subscribe(
+      feed => this.feeds = feed.items,
+      error => console.log(error));
   }
 
 }

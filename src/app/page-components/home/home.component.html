@@ -2,7 +2,7 @@
 <p style="text-align:center">
     <img src="../../../assets/images/holidayLogo.png" width="250em" />
 </p>
-<carousel id="myCarousel" [interval]="myInterval" [noWrap]="noWrapSlides">
+<carousel id="myCarousel" [interval]="myInterval" >
     <slide class="carousel slide" style="height:380px; margin: 0 auto" *ngFor="let slidez of places; let index=index" [active]="slidez.active">
         <img [src]="slidez.img" width="1130px" style="max-height:380px">
 

@@ -19,6 +19,7 @@ export class GoogleMapComponent {
     @Input() lat: number;
     @Input() lng: number;
     state: string= 'hide';
+    showMap: boolean = false;
 
     togglestates() {
     this.state = (this.state === 'hide' ? 'show' : 'hide');
